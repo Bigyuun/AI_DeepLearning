@@ -1,3 +1,5 @@
+# 혼공 딥러닝 셀프스터디 자료
+# 교재에 따라 Colab 환경 진행
 
 from sklearn.neighbors import KNeighborsClassifier
 import matplotlib.pyplot as plt
