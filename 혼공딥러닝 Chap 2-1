@@ -23,7 +23,9 @@ fish_target = [1]*35 + [0]*14
 # print(fish_target)
 # print(len(fish_data))
 # print(len(fish_target))
+#===============================================================================
 
+#===============================================================================
 '''---------------------------------------------------------------------------
    기존 배열
    ---------------------------------------------------------------------------'''
@@ -45,9 +47,6 @@ test_target = fish_target[35:]
 input_arr = np.array(fish_data)
 target_arr = np.array(fish_target)
 
-print(input_arr)
-print(input_arr.shape)
-
 # 도미와 빙어데이터를 섞어줌 --> index를 섞음
 np.random.seed(42)   #seed는 랜덤함수를 일정하게 설정함(초기값 일정)
 index = np.arange(49)
@@ -63,6 +62,16 @@ test_target = target_arr[index[35:]]
 
 # 단순 데이터 잘 들어가는지 확인용
 print(train_input[0], input_arr[13])
+#===============================================================================
+
+#===============================================================================
+
+# 그래프 도식화
+plt.scatter(train_input[:,0], train_input[:,1])
+plt.scatter(test_input[:,0], test_input[:,1])
+plt.xlabel('length')
+plt.ylabel('weight')
+plt.show()
 
 # Fit 모델 훈련
 print("Fitting...")
@@ -72,5 +81,6 @@ print("Fit complete")
 score = kn.score(test_input, test_target)
 print("Score : ", score)
 
+print(kn.predict(test_input))
 
-
+print(test_target)
